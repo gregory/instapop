@@ -1,7 +1,7 @@
 -content_for :javascript do
   %script
     !=%{ Instapop.Init(#{current_token.to_json.html_safe}) }
-    =%{  new Instapop.Routers.PicturesRouter()             }
+    =%{  new Instapop.Routers.PicturesRouter().index()             }
 
 .row-fluid
   .span12

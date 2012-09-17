@@ -26,10 +26,6 @@ group :development do
   gem 'puma'
 end
 
-group :test do
-  gem 'capybara'
-end
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'jasmine', '~> 1.2.1'
@@ -37,5 +33,7 @@ group :development, :test do
   gem 'debugger'
   gem 'guard'
   gem 'guard-coffeescript'
+  gem 'capybara'
+
 end
 

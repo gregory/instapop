@@ -9,3 +9,6 @@ window.Instapop =
   Collections: {}
   Routers: {}
   Views: {}
+  Constants: {}
+  Init: (current_token) ->
+    Instapop.Constants.current_token = current_token
