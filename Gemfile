@@ -10,7 +10,7 @@ gem 'haml', '~> 3.1.7'
 gem 'strong_parameters'
 gem 'bson_ext', '~> 1.5'
 gem 'json'
-gem 'sqlite3'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +28,7 @@ end
 
 group :development do
   gem 'puma'
+  gem 'sqlite3'
 end
 
 group :development, :test do
