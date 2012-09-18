@@ -1,0 +1,5 @@
+- console.log @pictures
+.row
+  - @pictures.each (picture) ->
+    .span2
+      %img{src: picture.get('images').thumbnail.url}

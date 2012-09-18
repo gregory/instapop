@@ -1,0 +1,60 @@
+[0.000][INFO]:      ChromeDriver 21.0.1180.4 /usr/local/bin/chromedriver
+[0.236][FINE]:      Initializing session with capabilities {
+   "browserName": "chrome",
+   "chrome.detach": true,
+   "chromeOptions": {
+      "detach": true
+   },
+   "cssSelectorsEnabled": true,
+   "javascriptEnabled": true,
+   "nativeEvents": false,
+   "platform": "ANY",
+   "rotatable": false,
+   "takesScreenshot": false,
+   "version": ""
+}
+
+[0.237][INFO]:      Using named testing interface
+[0.915][INFO]:      Connected to Chrome successfully. Version: 21.0.1180.89
+[0.921][FINE]:      Command received (/session/9d9adf9911e70540b0f8dbf28b7674ef)
+[0.921][FINE]:      Command finished (/session/9d9adf9911e70540b0f8dbf28b7674ef) with response {
+   "sessionId": "9d9adf9911e70540b0f8dbf28b7674ef",
+   "status": 0,
+   "value": {
+      "acceptSslCerts": false,
+      "applicationCacheEnabled": false,
+      "browserConnectionEnabled": false,
+      "browserName": "chrome",
+      "chrome.chromedriverVersion": "21.0.1180.4",
+      "chrome.nativeEvents": false,
+      "cssSelectorsEnabled": true,
+      "databaseEnabled": false,
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "locationContextEnabled": false,
+      "nativeEvents": true,
+      "platform": "mac",
+      "rotatable": false,
+      "takesScreenshot": true,
+      "version": "21.0.1180.89",
+      "webStorageEnabled": true
+   }
+}
+
+[0.924][FINE]:      Command received (/session/9d9adf9911e70540b0f8dbf28b7674ef/url) with params {
+   "url": "http://www.example.com/"
+}
+
+[0.924][FINER]:     Waiting for all views to stop loading...
+[0.924][FINER]:     Done waiting for all views to stop loading
+[3.525][FINER]:     Waiting for all views to stop loading...
+[3.525][FINER]:     Done waiting for all views to stop loading
+[3.525][FINE]:      Command finished (/session/9d9adf9911e70540b0f8dbf28b7674ef/url) with response {
+   "sessionId": "9d9adf9911e70540b0f8dbf28b7674ef",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[3.534][FINE]:      Command received (/session/9d9adf9911e70540b0f8dbf28b7674ef)

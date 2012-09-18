@@ -1,6 +1,9 @@
 Instapop::Application.routes.draw do
-  get '' do
+  resource :session, only: [:create, :new] do
+    match '/:name/callback', action: :create, constraints: { name: 'instagram' }, as: :instagram_callback
   end
 
-  root to: '/'
+  resources :pictures, only: [:index]
+
+  root to: 'pictures#index'
 end

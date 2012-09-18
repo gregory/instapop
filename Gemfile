@@ -7,6 +7,9 @@ gem 'rails', '3.2.8'
 
 gem 'instagram', '~> 0.8.5'
 gem 'haml', '~> 3.1.7'
+gem 'strong_parameters'
+gem 'bson_ext', '~> 1.5'
+gem 'json'
 gem 'sqlite3'
 
 # Gems used only for assets and not required
@@ -20,6 +23,7 @@ group :assets do
   gem 'modernizr_rails','~> 2.5',  :require => 'modernizr-rails'
   gem 'bootstrap-sass', '~> 2.1.0.0'
   gem 'uglifier', '>= 1.0.3'
+  gem 'haml_coffee_assets', '~> 0.8.4'
 end
 
 group :development do
