@@ -1,5 +1,23 @@
 - console.log @pictures
-.row
+%ul.thumbnails
   - @pictures.each (picture) ->
-    .span2
-      %img{src: picture.get('images').thumbnail.url}
+    %li.span3
+      %article.thumbnail{data-user: picture.username()}
+        %header.thumbnail_header
+          %a{href: picture.link(), target: '_blank'}
+            %i.icon-time
+            "Il y a une heure"
+          %span
+            %i.icon-map-marker
+            - picture.location()
+        %figure.thumbnail_content
+          %img{src: picture.low_resolution().url, width: picture.low_resolution().width, height: picture.low_resolution().height, alt: picture.caption_text()}
+        %footer.thumbnail_footer
+          %span
+            %i.icon-heart
+            = picture.likes()
+          %img{src: picture.profile_picture(), height: '20', width: '20'}
+          %a{href: picture.link(), target: '_blank'}
+            =picture.username()
+
+

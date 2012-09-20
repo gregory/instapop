@@ -7,19 +7,19 @@
 
   %body
     %header
-    %nav.navbar.navbar-inverse
-      .navbar-inner
-        .container
-          %a.brand{:href => '/'}< InstaPop
-          %ul.nav
-            %li
-              %a{:href => "#"}< Roger Rabit
-            %li
-              %a{:href => "#"}< Paramètres
-            %li
-              =link_to 'login',  instagram_sign_in_link
+      %nav.navbar
+        .navbar-inner
+          .container
+            %a.brand{:href => '/'}< InstaPop
+            %ul.nav
+              %li
+                %span.separator
+              %li
+                %a{:href => "#"}< Paramètres
+              %li
+                =link_to 'login',  instagram_sign_in_link
 
-    .container-fluid
+    .container
       = yield
 
   = javascript_include_tag "application"

@@ -34,6 +34,7 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'jasmine', '~> 1.2.1'
+  gem 'sinon-rails', '~> 1.4.2.1'
   gem 'jasmine-jquery-rails', '~> 1.4.2'
   gem 'debugger'
   gem 'guard'
