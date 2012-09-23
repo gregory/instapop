@@ -11,15 +11,22 @@ describe 'Instapop.Models.Picture', ->
     spyOn(@picture, 'get', 'user').andReturn(@user)
     expect(@picture.user instanceof Instapop.Models.User).toEqual(true)
 
-  describe '#username', ->
+  xdescribe '#username', ->
     it 'return the username of the user', ->
       console.log @picture.username()
       spyOn(@picture.user, 'username')
       console.log @picture.username
       #@picture.user.username.toHaveBeenCalled()
 
+  xdescribe '#thumbnail', ->
+    xit 'should change the attributes of the current model'
 
-describe 'Instapop.Collections.Pictures', ->
+  xdescribe '#caption_text'
+
+  xdescribe 'updateAttributesWith'
+
+
+xdescribe 'Instapop.Collections.Pictures', ->
   beforeEach ->
     @pictureCollection = new Instapop.Collections.Pictures
 

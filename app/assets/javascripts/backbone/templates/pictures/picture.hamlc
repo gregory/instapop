@@ -1,0 +1,1 @@
+%img{src: @picture.thumbnail().url, alt: @picture.caption_text()}

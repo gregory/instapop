@@ -8,4 +8,4 @@ class Instapop.Routers.PicturesRouter extends Backbone.Router
 
   index: ->
     listing = new Instapop.Views.Pictures.Index({collection: @collection})
-    $("#pictures").html(listing.el)
+    $("#am-container").html(listing.el)

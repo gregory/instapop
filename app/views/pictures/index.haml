@@ -1,7 +1,10 @@
 -content_for :javascript do
+  = javascript_include_tag 'pictures'
   %script
     =%{ new Instapop.Routers.PicturesRouter().index() }
 
+- content_for :stylesheet do
+  = stylesheet_link_tag 'pictures'
 .row-fluid
-  #pictures
-    Loading ...
+  #am-container.am-container
+

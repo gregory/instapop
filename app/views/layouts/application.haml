@@ -4,6 +4,7 @@
   %title Instapop
   = csrf_meta_tags
   = stylesheet_link_tag "application", :media => "all"
+  = yield :stylesheet
 
   %body
     %header
@@ -11,15 +12,13 @@
         .navbar-inner
           .container
             %a.brand{:href => '/'}< InstaPop
-            %ul.nav
+            %ul.nav.pull-right
               %li
-                %span.separator
-              %li
-                %a{:href => "#"}< Paramètres
-              %li
-                =link_to 'login',  instagram_sign_in_link
+                %a
+                  about
 
-    .container
+
+    .container-fluid
       = yield
 
   = javascript_include_tag "application"
