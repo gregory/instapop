@@ -1,15 +1,16 @@
 # initialize the plugin
-$container = $("#am-container")
-$imgs = $container.find("img").hide()
-totalImgs = $imgs.length
-cnt = 0
-$imgs.each (i) ->
-  $img = $(this)
+@container = $("#am-container")
+
+@imgs = container.find("img").hide()
+@totalImgs = imgs.length
+@cnt = 0
+@imgs.each (i) ->
+  img = $(@)
   $("<img/>").load(->
     ++cnt
-    if cnt is totalImgs
-      $imgs.show()
-      $container.montage
+    if @cnt is @totalImgs
+      @imgs.show()
+      @container.montage
         alternateHeight: true
         alternateHeightRange:
           min: 90
@@ -19,7 +20,7 @@ $imgs.each (i) ->
         margin: 0
         fillLastRow: true
 
-  ).attr "src", $img.attr("src")
+  ).attr "src", @img.attr("src")
 
 $(document).ready ->
   $("a[rel='popover']").popover

@@ -1,32 +1,50 @@
+@context = @describe
 describe 'Instapop.Models.Picture', ->
   beforeEach ->
     @picture = new Instapop.Models.Picture
-    @user    = new Instapop.Models.User({username: 'toto'})
-    sinon.mock(@user)
 
-  it 'should have a default name', ->
-    expect(@picture.get('name')).toEqual('super name')
+  describe '#updateAttributesWith', ->
+    beforeEach ->
+      @copy = new Instapop.Models.Picture({attr1: 'super'})
 
-  it 'should be initialized with a user model', ->
-    spyOn(@picture, 'get', 'user').andReturn(@user)
-    expect(@picture.user instanceof Instapop.Models.User).toEqual(true)
+    it 'update the attributes', ->
+      @picture.updateAttributesWith(@copy.toJSON())
+      expect(@picture.get('attr1')).toEqual('super')
 
-  xdescribe '#username', ->
-    it 'return the username of the user', ->
-      console.log @picture.username()
-      spyOn(@picture.user, 'username')
-      console.log @picture.username
-      #@picture.user.username.toHaveBeenCalled()
+    it 'triggers an event', ->
+      spyOn(@picture, 'trigger')
+      @picture.updateAttributesWith(@copy.toJSON())
+      expect(@picture.trigger).toHaveBeenCalledWith('updated')
 
-  xdescribe '#thumbnail', ->
-    xit 'should change the attributes of the current model'
+  describe '#thumbnail', ->
+    it 'calls the get backbone method for images', ->
+      spyOn(@picture, 'get').andReturn({thumbnail: ''})
+      @picture.thumbnail()
+      expect(@picture.get).toHaveBeenCalledWith('images')
 
-  xdescribe '#caption_text'
+  describe '#caption_text', ->
+    it 'calls the get backbone method for caption', ->
+      spyOn(@picture, 'get').andReturn({text: ''})
+      @picture.caption_text()
+      expect(@picture.get).toHaveBeenCalledWith('caption')
 
-  xdescribe 'updateAttributesWith'
+    context 'when there is a caption with text', ->
+      it 'returns the caption text', ->
+        spyOn(@picture, 'get').andReturn({text: 'awesome text'})
+        expect(@picture.caption_text()).toEqual('awesome text')
+
+    context 'when there is no caption without text', ->
+      it 'returns the words: instagram image', ->
+        spyOn(@picture, 'get').andReturn({text: ''})
+        expect(@picture.caption_text()).toEqual('instagram image')
+
+    context 'when there is no caption', ->
+      it 'returns the words: instagram image', ->
+        spyOn(@picture, 'get').andReturn({})
+        expect(@picture.caption_text()).toEqual('instagram image')
 
 
-xdescribe 'Instapop.Collections.Pictures', ->
+describe 'Instapop.Collections.Pictures', ->
   beforeEach ->
     @pictureCollection = new Instapop.Collections.Pictures
 
